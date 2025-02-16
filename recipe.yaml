@@ -1,0 +1,20 @@
+package:
+  name: libassert
+  version: 2.1.4
+
+source:
+  git: https://github.com/jeremy-rifkin/libassert.git
+  tag: ${{ version }}
+
+build:
+  script: ./build.sh
+
+requirements:
+  build:
+    - clang  # [unix]
+    - clangxx  # [unix]
+    - cmake
+    - ninja
+  host:
+    - zlib
+  run: []  # 运行时依赖自动从 host 继承
