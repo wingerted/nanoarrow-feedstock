@@ -30,7 +30,7 @@ jobs:
         # needs to be unique for each matrix entry
         artifact-name: package-${{ matrix.target-platform }}
         build-args: --target-platform ${{ matrix.target-platform }}${{ matrix.target-platform == 'linux-aarch64' && ' --no-test' || '' }}
-        
+
   release:
     name: Create Release
     needs: build
@@ -41,7 +41,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            output/**/*.conda
+            **/*.conda
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
