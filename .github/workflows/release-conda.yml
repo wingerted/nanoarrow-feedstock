@@ -8,6 +8,7 @@ on:
 # 添加权限配置
 permissions:
   contents: write  # 允许工作流创建 releases
+  id-token: write  # 添加 id-token 写入权限
 
 jobs:
   build:
