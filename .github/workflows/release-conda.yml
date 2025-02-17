@@ -39,5 +39,13 @@ jobs:
         generate_release_notes: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-
       
+    - name: Upload all packages
+      shell: bash
+      # do not upload on PR
+      if: github.event_name == 'push'
+      run: |
+        # uses trusted publishers for the upload
+        for file in output/**/*.conda; do
+          rattler-build upload prefix -c cxxlibs "$file"
+        done
