@@ -1,6 +1,6 @@
 package:
   name: libassert
-  version: 2.1.4
+  version: 2.1.4-1
 
 source:
   git: https://github.com/jeremy-rifkin/libassert.git
