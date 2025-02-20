@@ -19,7 +19,7 @@ jobs:
         include:
           - os: ubuntu-latest
             target-platform: linux-64
-          - os: macos-latest
+          - os: macos-15
             target-platform: osx-arm64
     steps:
     - name: Checkout code
