@@ -1,10 +1,10 @@
 package:
   name: libassert
-  version: 2.1.4_1
+  version: 2.1.4_2
 
 source:
   git: https://github.com/jeremy-rifkin/libassert.git
-  tag: ${{ version }}
+  tag: v2.1.4
 
 build:
   script: ./build.sh
