@@ -12,6 +12,7 @@ mkdir -p build && cd build
 cmake ${CMAKE_ARGS} -GNinja \
     -DCMAKE_PREFIX_PATH="$PREFIX" \
     -DCMAKE_INSTALL_PREFIX="$PREFIX" \
+    -DCMAKE_CXX_FLAGS=="-fpic" \
     "$SRC_DIR"
 
 ninja
