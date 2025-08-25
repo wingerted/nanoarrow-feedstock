@@ -1,6 +1,6 @@
-# libassert Conda 包
+# nanoarrow Conda 包
 
-本仓库为 **libassert** 提供 conda 包的构建配置，使用了 Pixi 和 Rattler-build 工具。主要包含以下文件：
+本仓库为 **nanoarrow** 提供 conda 包的构建配置，使用了 Pixi 和 Rattler-build 工具。主要包含以下文件：
 
 - **pixi.toml**：项目构建依赖的配置文件
 - **recipe.yaml**：conda 包的构建配方

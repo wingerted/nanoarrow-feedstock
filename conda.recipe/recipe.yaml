@@ -1,26 +1,32 @@
 package:
-  name: libassert
-  version: 2.1.4_2
+  name: nanoarrow
+  version: 0.6.0
 
 source:
-  git: https://github.com/jeremy-rifkin/libassert.git
-  tag: v2.1.4
+  git: https://github.com/apache/arrow-nanoarrow.git
+  tag: apache-arrow-nanoarrow-0.6.0
 
 build:
   script: ./build.sh
+  number: 1
 
 requirements:
   build:
-    - clang
-    - clangxx
     - cmake
     - ninja
+    - meson-python
+    - gcc
+    - gxx
   host:
-    - zlib
-  run: []  # 运行时依赖自动从 host 继承
+    - python
+    - pip
+    - cython
+    - setuptools
+    - certifi
+  run: []
 
 # 包的元数据
 about:
-  homepage: https://github.com/jeremy-rifkin/libassert
-  license: MIT
-  summary: A modern assertion library for C++
+  homepage: https://github.com/apache/arrow-nanoarrow
+  license: Apache-2.0
+  summary: A minimal Arrow C data interface implementation
