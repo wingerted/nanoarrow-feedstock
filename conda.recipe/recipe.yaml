@@ -1,29 +1,35 @@
+context:
+  version: 0.6.0
+
 package:
   name: nanoarrow
-  version: 0.6.0
+  version: ${{ version }}
 
 source:
   git: https://github.com/apache/arrow-nanoarrow.git
-  tag: apache-arrow-nanoarrow-0.6.0
+  tag: apache-arrow-nanoarrow-${{ version }}.dev
 
 build:
-  script: ./build.sh
-  number: 1
+  script: build.sh
+  number: 2
 
 requirements:
   build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
     - cmake
     - ninja
-    - meson-python
-    - gcc
-    - gxx
   host:
     - python
-    - pip
+    - uv
     - cython
-    - setuptools
-    - certifi
+    - setuptools >=61.0.0
   run: []
+
+tests:
+- python:
+    imports:
+    - nanoarrow
 
 # 包的元数据
 about:
