@@ -2,10 +2,7 @@
 set -e
 set -x
 
-mkdir -p build && cd build
-
-export CC=gcc
-export CXX=g++
+mkdir -p build && pushd build
 
 cmake ${CMAKE_ARGS} -GNinja \
     -DCMAKE_PREFIX_PATH="$PREFIX" \
@@ -18,6 +15,5 @@ ninja
 # The `install` command will take care of copying the files to the right place
 ninja install
 
-cd ../python
-
-$PYTHON -m pip install . --no-build-isolation
+popd
+uv pip install -p $PYTHON python/ -vv --no-deps --no-build-isolation
