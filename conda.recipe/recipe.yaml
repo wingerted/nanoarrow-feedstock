@@ -30,6 +30,7 @@ tests:
 - python:
     imports:
     - nanoarrow
+    - nanoarrow.ipc
 
 # 包的元数据
 about:
